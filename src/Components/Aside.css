@@ -1,0 +1,57 @@
+.aside{
+    width: 100%;
+    margin-top: 25px;
+}
+.listings-section{
+    background: var(--card-secondary-bg);
+    color: var(--card-secondary-color);
+    box-shadow: 0 0 0 1px var(--card-secondary-border);
+    border-radius: var(--radius);
+    overflow-wrap: anywhere;
+    margin-bottom: 1rem;
+}
+.section-header{
+    padding-left: 12px;
+    padding-right: 12px;
+    --body-bg:#000000;
+    border-bottom: 1px solid var(--body-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-header div a{
+    font-weight: var(--fw-medium);
+    font-size: var(--fs-s);
+    text-decoration: none;
+    color: #17a1f6;
+
+}
+
+.list-cards{
+    color: #dde0e2;
+}
+.list-cards a{
+    color: inherit;
+    display: block;
+    padding: var(--su-4);
+    text-decoration: none;
+    
+}
+.list-cards a:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.list-cards a:hover{
+    background-color: #000;
+}
+
+.list-cards a:hover>.card--title{
+    color: var(--dark-accent-color);
+}
+.card--title{
+line-height: 1.5;
+}
+.list-type{
+    font-size: 12px;
+    margin-top: 5px;
+}

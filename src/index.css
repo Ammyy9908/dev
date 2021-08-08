@@ -1,0 +1,78 @@
+:root{
+  --dark-nav-background:#1a2634;
+  --dark-nav-color:#f9fafa;
+  --dark-body-background:#0d1219;
+  --dark-hover-color:#000000;
+  --dark-card-color:#1a2634;
+  --dark-icon-color:#a7adb2;
+  --dark-accent-color:#5855f3;
+  --card-secondary-bg:#f9fafa0d;
+  --card-secondary-color:#dde0e2;
+  --card-secondary-border:#ffffff1a;
+  --base-90: #dde0e2;
+  --base-80: #c2c6ca;
+  --base-70: #a7adb2;
+  --base-60: #8d949b;
+  --base-50: #747c85;
+  --base-40: #5c6570;
+  --base-30: #444f5b;
+  --base-20: #2e3a48;
+  --base-10: #1a2634;
+  --site-width: 1280px;
+  --radius:5px;
+  --card-bg:#1a2634;
+  --card-color:#f9fafa;
+  --transition-func: cubic-bezier(0.17, 0.67, 0.5, 0.71);
+  --transition-time: 100ms;
+  --fs-xs: 0.75rem;
+  --fs-s: 0.875rem;
+  --fs-base: 1rem;
+  --fs-l: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+  --fs-base: 1rem;
+  --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-heavy: 800;
+    --lh-tight: 1.25;
+    --lh-base: 1.5;
+    --opacity-0: 0.00001;
+    --opacity-25: 0.25;
+    --opacity-50: 0.5;
+    --opacity-75: 0.75;
+    --opacity-100: 1;
+    --font-size: var(--fs-base);
+  --transition-props: var(--transition-func) var(--transition-time);
+  --font-family:-apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --su-1: 0.25rem;
+  --su-2: 0.5rem;
+  --su-3: 0.75rem;
+  --su-4: 1rem;
+  --su-5: 1.25rem;
+  --su-6: 1.5rem;
+  --su-7: 2rem;
+  --su-8: 3rem;
+  --su-9: 4rem;
+  --su-10: 8rem;
+  --lh-tight: 1.25;
+  --lh-base: 1.5;
+  --border-width: 0px;
+  --story-padding:var(--su-4);
+  --title-font-size: var(--fs-2xl);
+  --tag-color:#a7adb2;
+  --card-color-tertiary:#747c85;
+}
+*::-webkit-scrollbar{
+  width: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--dark-body-background);
+  user-select: none;
+}
