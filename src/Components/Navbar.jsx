@@ -5,6 +5,7 @@ import Bell from "../assets/Bell";
 import Logo from '../assets/Logo';
 import { connect } from 'react-redux';
 import { setDrop } from '../redux/actions/_appActions';
+import { Link, useHistory } from 'react-router-dom';
 
 function IconButton({Icon}){
     return(
@@ -18,6 +19,14 @@ function Navbar(props) {
         if(e.target.classList.contains("user__nav__avatar")){
             props.setDrop(!props.dropdown)
         }
+    }
+    const history = useHistory();
+    const regNav = ()=>{
+        history.push('/register');
+    }
+
+    const loginNav = ()=>{
+        history.push('/login');
     }
     return (
         <div className="header">
@@ -33,13 +42,17 @@ function Navbar(props) {
                     </div>
                 </div>
                 <div className="header__right">
-                    <button className="create_post">Create Post</button>
+                    <div className="nav__auth__buttons">
+                        <button onClick={loginNav}>Log in</button>
+                        <button onClick={regNav}>Create account</button>
+                    </div>
+                    {props.user && <><button className="create_post">Create Post</button>
                     <IconButton Icon={Chat}/>
                     <IconButton Icon={Bell}/>
                     <div className="user__nav__avatar" onClick={handleDrodpwn}>
                     {props.dropdown &&<div className="dropdown">
                           <div className="drop__header">
-                              <h3>Sumit Bighaniya</h3>
+                              <Link to="/profile"><h3>Sumit Bighaniya</h3></Link>
                               <span>@sammy786</span>
                           </div>
                           <div className="dropdown__body">
@@ -48,10 +61,11 @@ function Navbar(props) {
                               <a href="/">Reading list</a>
                               <a href="/">Settings</a>
                               <hr />
-                              <a href="/">Logout</a>
+                              <a href="/signout-confirm">Logout</a>
                           </div>
                       </div>}
                     </div>
+                    </>}
                 </div>
             </div>
         </div>
@@ -63,6 +77,7 @@ const mapDispatchToProps = (dispatch)=>({
 })
 
 const mapStateToProps = (state)=>({
-    dropdown:state.appReducer.isDrop
+    dropdown:state.appReducer.isDrop,
+    user:state.appReducer.user
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Navbar)

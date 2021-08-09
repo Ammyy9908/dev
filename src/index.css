@@ -9,6 +9,8 @@
   --card-secondary-bg:#f9fafa0d;
   --card-secondary-color:#dde0e2;
   --card-secondary-border:#ffffff1a;
+  --base:#f9fafa;
+  --base-100: var(--base);
   --base-90: #dde0e2;
   --base-80: #c2c6ca;
   --base-70: #a7adb2;
@@ -19,6 +21,7 @@
   --base-20: #2e3a48;
   --base-10: #1a2634;
   --site-width: 1280px;
+  --form-border-focus:#3b49df;
   --radius:5px;
   --card-bg:#1a2634;
   --card-color:#f9fafa;
@@ -65,6 +68,17 @@
   --title-font-size: var(--fs-2xl);
   --tag-color:#a7adb2;
   --card-color-tertiary:#747c85;
+  --card-border:#ffffff26;
+  --layout-content-width: 1fr;
+  --layout: var(--layout-content-width);
+  --layout-sidebar-left-width: 240px;
+  --layout-content-width: 1fr;
+  --layout-gap: var(--su-4);
+  --layout-padding: var(--su-4);
+  --button-primary-bg:#7b78ff;
+  --button-primary-bg-hover:#5855f3;
+  --padding: var(--su-6);
+  --label-primary:var(--base-70);
 }
 *::-webkit-scrollbar{
   width: 0;
