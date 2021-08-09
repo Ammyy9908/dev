@@ -21,7 +21,7 @@ function Login(props) {
 
 
     const githubLogin = ()=>{
-        window.location=`https://github.com/login/oauth/authorize?client_id=554f1ed9afd292a68dc1&redirect_uri=http://localhost:5000/github/callback`;
+        window.location=`https://github.com/login/oauth/authorize?client_id=554f1ed9afd292a68dc1&redirect_uri=https://dev-server-community.herokuapp.com/github/callback`;
     }
 
     const history = useHistory();
