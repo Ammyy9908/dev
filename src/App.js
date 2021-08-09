@@ -15,7 +15,7 @@ function App(props) {
 
   React.useEffect(()=>{
     if(Cookies.get("AUTH_TOKEN") && !props.user){
-      axios.get(`http://localhost:5000/user`,{
+      axios.get(`https://dev-server-community.herokuapp.com/user`,{
         headers:{
           "Authorization":Cookies.get("AUTH_TOKEN")
         }
