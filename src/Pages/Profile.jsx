@@ -11,6 +11,7 @@ import { setDrop } from '../redux/actions/_appActions';
 import "./Profile.css"
 
 function Profile(props) {
+
     React.useEffect(()=>{
         if(props.dropdown){
             props.setDrop(false);
@@ -21,19 +22,19 @@ function Profile(props) {
     return (
         <div className="profile">
              <Navbar/>
-             <div className="profile__background">
+             {props.user && <div className="profile__background">
                     <div className="profile__layout">
                         <header className="profile__header">
                             <div className="profile__header__top">
                                 <span className="user__avatar__image">
-                                    <img src={props.user.avatar_url} alt={props.user.name} />
+                                    <img src={props.user.avatar} alt={props.user.name} />
                                 </span>
                                 <div className="profile__header__action">
                                     <button>Edit profile</button>
                                 </div>
                             </div>
                             <div className="profile__header__details">
-                                <h1>{props.user.name}</h1>
+                                <h1>{props.user.display_name}</h1>
                                 <p>{props.user.bio}</p>
                                 <div className="profile__header__meta">
                                 <span className="profile__header__meta__item">
@@ -42,13 +43,13 @@ function Profile(props) {
                                     </span>
                                     <span className="profile__header__meta__item">
                                         <CakeIcon/>
-                                        Joined on 15 Aug 2020
+                                        Joined on {new Date(props.user.createdAt).getDate()} {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][new Date(props.user.createdAt).getMonth()]} {new Date(props.user.createdAt).getFullYear()}
                                     </span>
                                     <a href={"mailto:"+props.user.email} className="profile__header__meta__item meta__link">
                                         <EmailIcon/>
                                         {props.user.email}
                                     </a>
-                                    <a href={props.user.url} className="profile__header__meta__item meta__link">
+                                    <a href={props.user.github_uri} className="profile__header__meta__item meta__link">
                                         <GithubIcon/>
                                     </a>
                                 </div>
@@ -61,7 +62,7 @@ function Profile(props) {
                             </div>
                         </header>
                     </div>
-            </div>
+            </div>}
              
         </div>
     )
