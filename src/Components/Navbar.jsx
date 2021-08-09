@@ -50,11 +50,11 @@ function Navbar(props) {
                     <IconButton Icon={Chat}/>
                     <IconButton Icon={Bell}/>
                     <div className="user__nav__avatar" onClick={handleDrodpwn}>
-                        <img src={props.user.avatar_url} alt={props.user.login} className="user__image"/>
+                        <img src={props.user.avatar} alt={props.user.login} className="user__image"/>
                     {props.dropdown &&<div className="dropdown">
                           <div className="drop__header">
-                              <Link to="/profile"><h3>{props.user.name}</h3></Link>
-                              <span>@{props.user.login}</span>
+                              <Link to="/profile"><h3>{props.user.display_name}</h3></Link>
+                              <span>@{props.user.user_name}</span>
                           </div>
                           <div className="dropdown__body">
                               <a href="/">Dashboard</a>

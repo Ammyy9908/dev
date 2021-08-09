@@ -8,6 +8,10 @@ import Navbar from '../Components/Navbar';
 import "./Register.css"
 
 function Register() {
+
+    const githubLogin = ()=>{
+        window.location=`https://github.com/login/oauth/authorize?client_id=554f1ed9afd292a68dc1&redirect_uri=https://dev-server-community.herokuapp.com/github/callback`;
+    }
   
     return (
         <div className="register">
@@ -20,7 +24,7 @@ function Register() {
                 </div>
                 <div className="register__actions">
                     <div className="register__providers">
-                        <button className="btn github_btn"><GithubIcon/> Sign Up with Github</button>
+                        <button className="btn github_btn" onClick={githubLogin}><GithubIcon/> Sign Up with Github</button>
                         {/* <button className="btn google_btn"><GoogleIcon/> Sign Up with Google</button> */}
                     </div>
                 </div>

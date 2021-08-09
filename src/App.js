@@ -15,13 +15,13 @@ function App(props) {
 
   React.useEffect(()=>{
     if(Cookies.get("AUTH_TOKEN") && !props.user){
-      axios.get(`https://api.github.com/user`,{
+      axios.get(`http://localhost:5000/user`,{
         headers:{
-          "Authorization":"token "+Cookies.get("AUTH_TOKEN")
+          "Authorization":Cookies.get("AUTH_TOKEN")
         }
       }).then((res)=>{
         console.log(res);
-        props.setUser(res.data);
+        props.setUser(res.data.user);
       })
     }
   },
