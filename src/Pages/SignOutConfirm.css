@@ -1,0 +1,54 @@
+.confirm-logout-wrapper{
+    width: 75%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+.confirm-logout-wrapper h1{
+    color: var(--base-100);
+    font-size: var(--fs-2xl);
+}
+.confirm-logout-wrapper button{
+    --vertical-padding: var(--su-3);
+    --horizontal-padding: var(--su-5);
+    --with-icon-padding: var(--su-3);
+    --icon-margin: var(--su-2);
+    --border-width: 0px;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+
+    position: relative;
+    display: inline-block;
+    padding: calc(var(--vertical-padding) - var(--border-width)) calc(var(--horizontal-padding) - var(--border-width));
+    border-radius: var(--radius);
+    outline: none;
+    font-family: inherit;
+    font-size: var(--font-size);
+    line-height: var(--su-6);
+    font-weight: var(--fw-medium);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: var(--border-width) solid;
+    overflow-wrap: normal;
+    --bg: var(--button-primary-bg);
+    --bg-hover: var(--button-primary-bg-hover);
+    --color: var(--button-primary-color);
+    --color-hover: var(--button-primary-color-hover);
+    --shadow: 0 1px 3px var(--shadow-color);
+    --shadow-hover: 0 2px 5px var(--shadow-color);
+
+    background-color: var(--bg);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+    color: var(--color);
+}
+
+.confirm-logout-wrapper button:hover{
+    background-color: var(--bg-hover);
+}

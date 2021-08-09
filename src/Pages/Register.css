@@ -1,0 +1,112 @@
+.register__layout{
+display: grid;
+font-size: var(--fs-base);
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    grid-gap: var(--layout-gap);
+    grid-template-columns: var(--layout);
+    padding: var(--layout-padding);
+}
+
+.register__card{
+    border-radius: var(--radius);
+    background: var(--card-bg);
+    padding: var(--su-8);
+    margin: 0 auto;
+    width: 640px;
+    color: var(--base-100);
+}
+.register__card__content{
+
+    margin-bottom: var(--su-6);
+    text-align: center;
+}
+.register__card__content >p{
+    color: var(--card-color-secondary);
+    font-size: var(--fs-base);
+    margin-top: 5px;
+}
+.register__card__content >p>a{
+    color: var(--dark-accent-color);
+    text-decoration: none;
+}
+.reg__title{
+    font-size: var(--fs-3xl);
+    color: var(--card-color);
+    margin: 0;
+}
+.register__providers{
+display: grid;
+margin-bottom: var(--su-4);
+grid-gap: var(--su-2);
+width: 100%;
+}
+.register__providers button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --vertical-padding: var(--su-3);
+    --horizontal-padding: var(--su-5);
+    --with-icon-padding: var(--su-3);
+    flex-grow: 1;
+    padding: 12px 20px 12px 12px;
+    font-family: inherit;
+    font-size: var(--font-size);
+    line-height: var(--su-6);
+    font-weight: var(--fw-medium);
+    transition: all var(--transition-props);
+    border: var(--border-width) solid;
+    overflow-wrap: normal;
+    cursor: pointer;
+    border-radius: var(--radius);
+}
+.register__providers button svg{
+    margin-right: 5px;
+}
+.github_btn{
+    --brand-github-bg: #24292e;
+    --bg: var(--brand-github-bg);
+    background-color: var(--bg);
+    color: var(--base-100);
+}
+.google_btn svg{
+width: 24px;
+height: 24px;
+}
+
+.register__hr{
+    text-align: center;
+    width: 90%;
+    position: relative;
+    height: 2px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.register__hr::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #707070;
+    top: 10;
+    position: absolute;
+    left: 0;
+
+}
+.register__hr span{
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    z-index: 2;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    width: auto;
+}
+.register__hr span a{
+    color: var(--dark-accent-color);
+    text-decoration: none;
+}

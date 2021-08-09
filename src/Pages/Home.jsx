@@ -3,19 +3,24 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Article from '../Components/Article'
 import Aside from '../Components/Aside'
+import Container from '../Components/Container'
 import Navbar from '../Components/Navbar'
 import Sidenav from '../Components/Sidenav'
-import { setTab } from '../redux/actions/_appActions'
+import { setDrop, setTab } from '../redux/actions/_appActions'
 import "./Home.css"
 
-function Container({children}){
-    return (
-        <div className="container">{children}</div>
-    )
-}
+
 
 function Home(props) {
-    console.log(props)
+
+    React.useEffect(()=>{
+        if(props.dropdown){
+            props.setDrop(false);
+        }
+    },
+    // eslint-disable-next-line
+    []);
+    
     if(props.type){
         props.setTab(props.type);
     }
@@ -47,18 +52,15 @@ function Home(props) {
                         </header>
                         <div className="home__feeds">
                             <div className="rendered__feeds">
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
-                                <Article/>
+                                <Article top={true}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                <Article top={false}/>
+                                
                             </div>
                         </div>
                     </div>
@@ -73,10 +75,12 @@ function Home(props) {
 
 const mapStateToProps = (state)=>({
     user:state.appReducer.user,
-    activeTab:state.appReducer.activeTab
+    activeTab:state.appReducer.activeTab,
+    dropdown:state.appReducer.dropdown
 })
 
 const mapDispatchToProps = (dispatch)=>({
-    setTab:(activeTab)=>dispatch(setTab(activeTab))
+    setTab:(activeTab)=>dispatch(setTab(activeTab)),
+    setDrop:(dropdown)=>dispatch(setDrop(dropdown))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Home)

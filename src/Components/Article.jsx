@@ -3,12 +3,12 @@ import CommentIcon from '../assets/CommentIcon';
 import HeartIcon from '../assets/HeartIcon';
 import "./Article.css"
 
-function Article() {
+function Article({top}) {
     return (
         <article className="article">
             <a href="/">Building A Minimal AutoSuggest</a>
             <div role="presentation">
-            <a href="/madsstoumann/building-a-minimal-autosuggest-4big" className="article__cover"><span class="hidden">Building A Minimal AutoSuggest</span></a>
+            {top && <a href="/madsstoumann/building-a-minimal-autosuggest-4big" className="article__cover"><span class="hidden">Building A Minimal AutoSuggest</span></a>}
 
             <div className="article__body">
                 <div className="article__body__top">
@@ -24,11 +24,11 @@ function Article() {
                     <h3><a href="/"><span>Article Title</span></a></h3>
                     <div className="article__tags">
                         <a href="/">
-                            <span className="tag__prefix">/</span>
+                            <span className="tag__prefix">#</span>
                             Tag 1
                         </a>
                         <a href="/">
-                            <span className="tag__prefix">/</span>
+                            <span className="tag__prefix">#</span>
                             Tag 1
                         </a>
                     </div>
