@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import CakeIcon from '../assets/CakeIcon';
 import EmailIcon from '../assets/EmailIcon';
@@ -23,6 +24,11 @@ function Profile(props) {
         <div className="profile">
              <Navbar/>
              {props.user && <div className="profile__background">
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>{props.user.display_name} Welcome Dev Community-Clone 🖥 🤓</title>
+               
+            </Helmet>
                     <div className="profile__layout">
                         <header className="profile__header">
                             <div className="profile__header__top">

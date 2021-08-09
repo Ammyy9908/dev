@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie';
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import GithubIcon from '../assets/GithubIcon';
 // eslint-disable-next-line
@@ -39,6 +40,10 @@ function Login(props) {
     [])
     return (
         <div className="login">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Welcome Dev Community-Clone 🖥 🤓</title>
+            </Helmet>
             <Navbar/>
             <div className="login__layout">
             <div className="login__card">

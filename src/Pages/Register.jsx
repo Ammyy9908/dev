@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 // eslint-disable-next-line
 import { useHistory } from 'react-router-dom';
 import GithubIcon from '../assets/GithubIcon';
@@ -15,6 +16,10 @@ function Register() {
   
     return (
         <div className="register">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Welcome Dev Community-Clone 🖥 🤓</title>
+            </Helmet>
             <Navbar/>
             <div className="register__layout">
             <div className="register__card">
