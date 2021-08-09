@@ -4,6 +4,7 @@ import CakeIcon from '../assets/CakeIcon';
 import EmailIcon from '../assets/EmailIcon';
 import GithubIcon from '../assets/GithubIcon';
 import LocationIcon from '../assets/LocationIcon';
+// eslint-disable-next-line
 import Container from '../Components/Container';
 import Navbar from '../Components/Navbar'
 import { setDrop } from '../redux/actions/_appActions';
@@ -14,7 +15,9 @@ function Profile(props) {
         if(props.dropdown){
             props.setDrop(false);
         }
-    },[]);
+    },
+    // eslint-disable-next-line
+    []);
     return (
         <div className="profile">
              <Navbar/>

@@ -1,6 +1,8 @@
 import React from 'react'
+// eslint-disable-next-line
 import { useHistory } from 'react-router-dom';
 import GithubIcon from '../assets/GithubIcon';
+// eslint-disable-next-line
 import GoogleIcon from '../assets/GoogleIcon';
 import Navbar from '../Components/Navbar';
 import "./Register.css"

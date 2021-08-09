@@ -24,7 +24,9 @@ function App(props) {
         props.setUser(res.data);
       })
     }
-  },[]);
+  },
+  // eslint-disable-next-line
+  []);
   return (
     <Router>
     <div>

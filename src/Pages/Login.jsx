@@ -2,6 +2,7 @@ import Cookies from 'js-cookie';
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import GithubIcon from '../assets/GithubIcon';
+// eslint-disable-next-line
 import GoogleIcon from '../assets/GoogleIcon';
 import Navbar from '../Components/Navbar';
 import "./Login.css";
@@ -33,7 +34,9 @@ function Login(props) {
 
             
         }
-    },[])
+    },
+    // eslint-disable-next-line
+    [])
     return (
         <div className="login">
             <Navbar/>
@@ -62,7 +65,7 @@ function Login(props) {
                    <input type="submit" value="Continue" />
                 </form>
                 <p className="forgot_password">
-                    <a href="#">I forgot password</a>
+                    <a href="/">I forgot password</a>
                 </p>
             </div>
             </div>

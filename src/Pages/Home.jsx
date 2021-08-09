@@ -17,7 +17,9 @@ function Home(props) {
         if(props.dropdown){
             props.setDrop(false);
         }
-    },[]);
+    },
+    // eslint-disable-next-line
+    []);
     
     if(props.type){
         props.setTab(props.type);

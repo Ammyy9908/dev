@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import "./SignOutConfirm.css"
 
 function SignOutConfirm() {
+    // eslint-disable-next-line
     const history = useHistory();
 
     const logout = ()=>{
