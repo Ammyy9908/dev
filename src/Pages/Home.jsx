@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Article from '../Components/Article'
@@ -29,6 +30,11 @@ function Home(props) {
     }
     return (
         <div className="home">
+
+                <Helmet>
+                <meta charSet="utf-8" />
+                <title>Dev Community-Clone 🖥 🤓</title>
+            </Helmet>
             <Navbar/>
 
             <Container>
