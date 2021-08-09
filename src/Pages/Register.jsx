@@ -19,7 +19,7 @@ function Register() {
                 <div className="register__actions">
                     <div className="register__providers">
                         <button className="btn github_btn"><GithubIcon/> Sign Up with Github</button>
-                        <button className="btn google_btn"><GoogleIcon/> Sign Up with Google</button>
+                        {/* <button className="btn google_btn"><GoogleIcon/> Sign Up with Google</button> */}
                     </div>
                 </div>
                 <div className="register__hr">

@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
@@ -7,7 +8,8 @@ function SignOutConfirm() {
     const history = useHistory();
 
     const logout = ()=>{
-        history.push('/');
+        Cookies.remove('AUTH_TOKEN');
+        window.location.href="/";
     }
     return (
         <div className="confirm-logout">

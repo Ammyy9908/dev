@@ -5,8 +5,26 @@ import Profile from './Pages/Profile';
 import SignOutConfirm from './Pages/SignOutConfirm';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import Cookies from 'js-cookie';
+import React from "react";
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { setUser } from './redux/actions/_appActions';
 
-function App() {
+function App(props) {
+
+  React.useEffect(()=>{
+    if(Cookies.get("AUTH_TOKEN") && !props.user){
+      axios.get(`https://api.github.com/user`,{
+        headers:{
+          "Authorization":"token "+Cookies.get("AUTH_TOKEN")
+        }
+      }).then((res)=>{
+        console.log(res);
+        props.setUser(res.data);
+      })
+    }
+  },[]);
   return (
     <Router>
     <div>
@@ -22,6 +40,10 @@ function App() {
       <Route exact path="/login">
       <Login/>
       </Route>
+      <Route path="/login/:token" render={(props) => {
+     const token = props.match.params.token;
+      return <Login token={token}/>
+  }}  />
       <Route exact path="/profile">
       <Profile/>
       </Route>
@@ -40,4 +62,8 @@ function App() {
   );
 }
 
-export default App;
+
+const dispatchToProps = (dispatch)=>({
+  setUser:(user)=>dispatch(setUser(user))
+})
+export default connect(null,dispatchToProps)(App);

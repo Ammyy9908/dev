@@ -1,4 +1,6 @@
+import Cookies from 'js-cookie';
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import GithubIcon from '../assets/GithubIcon';
 import GoogleIcon from '../assets/GoogleIcon';
 import Navbar from '../Components/Navbar';
@@ -14,7 +16,24 @@ const Field = ({id,type,placeholder,label})=>{
     )
 }
 
-function Login() {
+function Login(props) {
+
+
+    const githubLogin = ()=>{
+        window.location=`https://github.com/login/oauth/authorize?client_id=554f1ed9afd292a68dc1&redirect_uri=http://localhost:5000/github/callback`;
+    }
+
+    const history = useHistory();
+
+    React.useEffect(()=>{
+        if(props.token){
+            Cookies.set('AUTH_TOKEN',props.token);
+            history.push('/');
+
+
+            
+        }
+    },[])
     return (
         <div className="login">
             <Navbar/>
@@ -26,8 +45,8 @@ function Login() {
                 </div>
                 <div className="login__actions">
                     <div className="login__providers">
-                        <button className="btn github_btn"><GithubIcon/> Sign Up with Github</button>
-                        <button className="btn google_btn"><GoogleIcon/> Sign Up with Google</button>
+                        <button className="btn github_btn" onClick={githubLogin}><GithubIcon/> Sign Up with Github</button>
+                        {/* <button className="btn google_btn"><GoogleIcon/> Sign Up with Google</button> */}
                     </div>
                 </div>
                 <div className="login__hr">
@@ -42,6 +61,9 @@ function Login() {
                    </div>
                    <input type="submit" value="Continue" />
                 </form>
+                <p className="forgot_password">
+                    <a href="#">I forgot password</a>
+                </p>
             </div>
             </div>
         </div>

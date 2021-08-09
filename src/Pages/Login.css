@@ -75,6 +75,9 @@
     width: 24px;
     height: 24px;
     }
+    .github_btn svg{
+        fill: currentColor;
+    }
     
     .login__hr{
         text-align: center;
@@ -130,23 +133,51 @@
         outline: 0;
         margin-top: var(--su-2);
         line-height: var(--lh-base);
-        padding: calc(0.5em - var(--border-width)) 0.5em;
+        /* padding: calc(0.5em - var(--border-width)) 0.5em; */
+        padding-left: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-family: inherit;
         font-size: var(--fs-base);
         width: 100%;
         resize: vertical;
         border-radius: var(--radius);
         transition: all var(--transition-props);
+        border: 0;
     }
     .rembember-field{
         display: inline-flex;
         align-items: center;
         border-radius: var(--radius);
         transition: all var(--transition-props);
+        width: 100%;
+        margin-bottom: 15px;
     }
     .rembember-field  input[type="radio"]{
         margin: 0.1875em;
         justify-self: center;
         background-color: #3b49df;
         border-color: var(--form-border-focus);
+    }
+    .login__card form input[type="submit"]{
+        --vertical-padding: var(--su-3);
+        --horizontal-padding: var(--su-5);
+        --with-icon-padding: var(--su-3);
+        --icon-margin: var(--su-2);
+        margin-bottom: 5px;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: var(--radius);
+        border: 0;
+        background-color: var(--dark-accent-color);
+        font-size: 16px;
+        color: #fff;
+    }
+    .forgot_password{
+        text-align: center;
+    }
+    .forgot_password a{
+        text-decoration: none;
+        color: #3b49df;
     }

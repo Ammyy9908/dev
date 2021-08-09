@@ -16,7 +16,7 @@ function IconButton({Icon}){
 function Navbar(props) {
 
     const handleDrodpwn = (e)=>{
-        if(e.target.classList.contains("user__nav__avatar")){
+        if(e.target.classList.contains("user__nav__avatar") || e.target.classList.contains("user__image")){
             props.setDrop(!props.dropdown)
         }
     }
@@ -32,9 +32,9 @@ function Navbar(props) {
         <div className="header">
             <div className="header__wrapper">
                 <div className="header__left">
-                    <a href="/" className="site__logo">
+                    <Link to="/" className="site__logo">
                         <Logo/>
-                    </a>
+                    </Link>
                     <div className="navbar__search">
                         <form action="">
                             <input type="text" placeholder="Search..."/>
@@ -42,18 +42,19 @@ function Navbar(props) {
                     </div>
                 </div>
                 <div className="header__right">
-                    <div className="nav__auth__buttons">
+                    {!props.user && <div className="nav__auth__buttons">
                         <button onClick={loginNav}>Log in</button>
                         <button onClick={regNav}>Create account</button>
-                    </div>
+                    </div>}
                     {props.user && <><button className="create_post">Create Post</button>
                     <IconButton Icon={Chat}/>
                     <IconButton Icon={Bell}/>
                     <div className="user__nav__avatar" onClick={handleDrodpwn}>
+                        <img src={props.user.avatar_url} alt={props.user.login} className="user__image"/>
                     {props.dropdown &&<div className="dropdown">
                           <div className="drop__header">
-                              <Link to="/profile"><h3>Sumit Bighaniya</h3></Link>
-                              <span>@sammy786</span>
+                              <Link to="/profile"><h3>{props.user.name}</h3></Link>
+                              <span>@{props.user.login}</span>
                           </div>
                           <div className="dropdown__body">
                               <a href="/">Dashboard</a>
