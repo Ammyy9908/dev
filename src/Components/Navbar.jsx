@@ -28,6 +28,10 @@ function Navbar(props) {
     const loginNav = ()=>{
         history.push('/login');
     }
+
+    const moveToCreate = ()=>{
+        history.push('/new');
+    }
     return (
         <div className="header">
             <div className="header__wrapper">
@@ -46,7 +50,7 @@ function Navbar(props) {
                         <button onClick={loginNav}>Log in</button>
                         <button onClick={regNav}>Create account</button>
                     </div>}
-                    {props.user && <><button className="create_post">Create Post</button>
+                    {props.user && <><button className="create_post" onClick={moveToCreate}>Create Post</button>
                     <IconButton Icon={Chat}/>
                     <IconButton Icon={Bell}/>
                     <div className="user__nav__avatar" onClick={handleDrodpwn}>
@@ -58,7 +62,7 @@ function Navbar(props) {
                           </div>
                           <div className="dropdown__body">
                               <a href="/">Dashboard</a>
-                              <a href="/">Create a post</a>
+                              <a href="/new">Create a post</a>
                               <a href="/">Reading list</a>
                               <a href="/">Settings</a>
                               <hr />

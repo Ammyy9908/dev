@@ -1,18 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import "./Aside.css"
 
 
-function ListCard({title}){
+function ListCard({title,category}){
     return (
         <a href="/">
             <div className="card--title">{title}</div>
-            <div className="list-type">Misc</div>
+            <div className="list-type">{category}</div>
         </a>
     )
 }
 
 
-function Section({title}){
+function Section({title,listings}){
     return (
 <section className="listings-section">
                 <div className="section-header">
@@ -25,26 +26,28 @@ function Section({title}){
                 
 
                     <div className="list-cards">
-                            <ListCard title="Heard from a recruiter? Don't know what to do about it? 🤔 ➔ 💰 ➔ 💻"/>
-                            <ListCard title="[August 26] 👾 React, REST API, & Express Server Workshop 👾"/>
-                            <ListCard title="Walkthrough Wednesday with Lucia Cerchie"/>
-                            <ListCard title="Moar Serverless Conference - FREE Ticket Opportunity"/>
-                            <ListCard title="Looking for exciting opportunities in AI/ML/Data Science? Try ai-jobs.net 🧠🐱‍💻🤖🚗🚀"/>
-                           
+                            
+                           {
+                               listings && listings.slice(0,6).map((listing,i)=>{
+                                   return <ListCard title={listing.title} category={listing.category}/>
+                               })
+                           }
                         </div>
             </section>
     )
 }
-function Aside() {
+function Aside(props) {
     return (
         <div className="aside">
-            <Section title="Listings"/>
-            <Section title="/news"/>
-            <Section title="/help"/>
-            <Section title="/discuss"/>
-            <Section title="/challenges"/>
+            <Section title="Listings" listings={props.listings}/>
+          
         </div>
     )
 }
 
-export default Aside
+
+const mapStateToProps = (state)=>({
+    listings:state.appReducer.listings
+})
+
+export default connect(mapStateToProps,null)(Aside)

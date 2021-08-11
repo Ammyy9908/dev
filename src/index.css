@@ -10,6 +10,7 @@
   --card-secondary-color:#dde0e2;
   --card-secondary-border:#ffffff1a;
   --base:#f9fafa;
+  --base-0:#0d1219;
   --base-100: var(--base);
   --base-90: #dde0e2;
   --base-80: #c2c6ca;
@@ -51,6 +52,11 @@
     --font-size: var(--fs-base);
   --transition-props: var(--transition-func) var(--transition-time);
   --font-family:-apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ff-monospace: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --ff-serif: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  --ff-comic: 'Comic Sans MS', cursive, sans-serif;
+  --ff-dyslexic: OpenDyslexic, sans-serif;
   --su-1: 0.25rem;
   --su-2: 0.5rem;
   --su-3: 0.75rem;
@@ -79,6 +85,21 @@
   --button-primary-bg-hover:#5855f3;
   --padding: var(--su-6);
   --label-primary:var(--base-70);
+  --header-height: 56px;
+  --content-padding-y: var(--su-7);
+  --button-outlined-bg:#00000000;
+  --button-outlined-bg-hover:#ffffff09;
+  --button-outlined-border:#2e3a48;
+  --button-outlined-color:#c2c6ca;
+  --button-outlined-color-hover:#f9fafa;
+  --button-ghost-bg:#00000000;
+  --button-ghost-bg-hover:#ffffff09;
+  --button-ghost-color:#c2c6ca;
+  --button-ghost-inverted-bg:#00000000;
+  --button-ghost-inverted-bg-hover:#0000001a;
+  --button-ghost-inverted-color:#444f5b;
+  --button-outlined-inverted-color-hover:#1a2634;
+
 }
 *::-webkit-scrollbar{
   width: 0;
@@ -89,4 +110,61 @@ body{
   font-family: var(--font-family);
   background-color: var(--dark-body-background);
   user-select: none;
+  color: var(--body-color);
 }
+
+.btn_outlined {
+  --bg: var(--button-outlined-bg);
+  --bg-hover: var(--button-outlined-bg-hover);
+  --border: var(--button-outlined-border);
+  --border-hover: var(--button-outlined-border-hover);
+  --color: var(--button-outlined-color);
+  --color-hover: var(--button-outlined-color-hover);
+  --bg-inverted: var(--button-outlined-inverted-bg);
+  --bg-inverted-hover: var(--button-outlined-inverted-bg-hover);
+  --border-inverted: var(--button-outlined-inverted-border);
+  --border-inverted-hover: var(--button-outlined-inverted-border-hover);
+  --color-inverted: var(--button-outlined-inverted-color);
+  --color-inverted-hover: var(--button-outlined-inverted-color-hover);
+  --border-width: 2px;
+}
+
+.custom-btn {
+  --brand-apple-bg: #000;
+  --brand-apple-color: #fff;
+  --brand-apple-bg-hover: #1b1b1b;
+  --brand-twitter-bg: #1da1f2;
+  --brand-twitter-color: #fff;
+  --brand-twitter-bg-hover: #0096f2;
+  --brand-github-bg: #24292e;
+  --brand-github-color: #fff;
+  --brand-github-bg-hover: #000;
+  --brand-facebook-bg: #4267b2;
+  --brand-facebook-color: #fff;
+  --brand-facebook-bg-hover: #476fbf;
+  --brand-email-bg: #24292e;
+  --brand-email-color: #fff;
+  --brand-email-bg-hover: #000;
+}
+
+
+.btn-ghost {
+  --bg: var(--button-ghost-bg);
+  --bg-hover: var(--button-ghost-bg-hover);
+  --color: var(--button-ghost-color);
+  --color-hover: var(--button-ghost-color-hover);
+  --shadow: none;
+  --shadow-hover: none;
+  --bg-inverted: var(--button-ghost-inverted-bg);
+  --bg-inverted-hover: var(--button-ghost-inverted-bg-hover);
+  --color-inverted: var(--button-ghost-inverted-color);
+  --color-inverted-hover: var(--button-ghost-inverted-color-hover);
+}
+
+@media (min-width: 1024px)
+{
+:root {
+    --content-padding-x: var(--su-9);
+}
+}
+

@@ -10,6 +10,11 @@ import React from "react";
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { setUser } from './redux/actions/_appActions';
+import Create from './Pages/Create';
+import dotnenv from "dotenv";
+
+
+dotnenv.config();
 
 function App(props) {
 
@@ -41,6 +46,9 @@ function App(props) {
       </Route>
       <Route exact path="/login">
       <Login/>
+      </Route>
+      <Route exact path="/new">
+      <Create/>
       </Route>
       <Route path="/login/:token" render={(props) => {
      const token = props.match.params.token;

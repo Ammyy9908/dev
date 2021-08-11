@@ -26,6 +26,7 @@ import GithubIcon from '../assets/GithubIcon';
 import InstagramIcon from '../assets/InstagramIcon';
 import TwitchIcon from '../assets/TwitchIcon';
 import SettingIcon from '../assets/SettingIcon';
+import { connect } from 'react-redux';
 //FacebookIcon
 
 const List = ({title,Icon})=>{
@@ -37,13 +38,13 @@ const List = ({title,Icon})=>{
 const Tag = ({title})=>{
     return (
         <div className="tag-list">
-            <a href="/">/{title}</a>
+            <a href="/">#{title}</a>
         </div>
     )
 }
 
-function Sidenav() {
-
+function Sidenav(props) {
+    console.log("Sidenav props",props);
     const options = [
         {
             title:"Home",
@@ -135,27 +136,28 @@ function Sidenav() {
 
             <div className="bottom__sidenav">
                 <header>
-                    <h3>My Tags</h3>
+                    <h3>Tags</h3>
                     <a href="/"><SettingIcon/></a>
                 </header>
 
                 <div className="my__tags">
-                   <Tag title="Web Development"/>
-                   <Tag title="CSS"/>
-                   <Tag title="ReactJS"/>
-                   <Tag title="python"/>
-                   <Tag title="Web Development"/>
-                   <Tag title="CSS"/>
-                   <Tag title="ReactJS"/>
-                   <Tag title="python"/>
-                   <Tag title="Web Development"/>
-                   <Tag title="CSS"/>
-                   <Tag title="ReactJS"/>
-                   <Tag title="python"/>
+                   
+                   
+
+                   {
+                       props.tags && props.tags.map((tag,i)=>{
+                        return <Tag title={tag.name} key={i}/>
+                       })
+                   }
                 </div>
             </div>
         </div>
     )
 }
 
-export default Sidenav
+
+const mapStateToProps = (state) =>({
+    tags:state.appReducer.tags
+})
+
+export default connect(mapStateToProps,null)(Sidenav)

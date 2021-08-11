@@ -5,7 +5,12 @@ const intialState = {
     isError:false,
     isMobileNav:false,
     isDrop:false,
-    activeTab:null
+    activeTab:null,
+    articles:null,
+    listings:null,
+    tags:null,
+    pageCount:1,
+    
  }
  
  export default function AppReducer(state=intialState,action){
@@ -16,6 +21,41 @@ const intialState = {
              user:action.user
           }
        }
+
+       case "APPEND_ARTICLES":{
+         return{
+            ...state,
+            articles:[...state.articles,...action.articles]
+         }
+      }
+
+       case "SET_PAGE_COUNT":{
+          return{
+             ...state,
+             pageCount:action.pageCount
+          }
+       }
+
+       case "SET_ARTICLES":{
+         return{
+            ...state,
+            articles:action.articles
+         }
+      }
+
+      case "SET_TAGS":{
+         return{
+            ...state,
+            tags:action.tags
+         }
+      }
+
+      case "SET_LISTINGS":{
+         return{
+            ...state,
+            listings:action.listings
+         }
+      }
 
        case "SET_TAB":{
          return{
