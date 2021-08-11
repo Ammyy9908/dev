@@ -68,7 +68,9 @@ function Home(props) {
 
             props.setTags(tags);
         })
-    },[props.activeTab]);
+    },
+    // eslint-disable-next-line
+    [props.activeTab]);
 
     React.useEffect(()=>{
         if(props.dropdown){
